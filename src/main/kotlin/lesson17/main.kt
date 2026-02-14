@@ -20,7 +20,6 @@ enum class ItemType{
     WEAPON,
     ARMOR,
     POTION,
-
     POWERT
 }
 
@@ -222,7 +221,8 @@ fun main() = KoolApplication{
                             game.hotbar.value = updated
                         }
                 }
-                Button ("получить меч"){
+
+                Button ("Получить меч"){
                     modifier
                         .margin(end = 8.dp)
                         .onClick{
@@ -243,8 +243,8 @@ fun main() = KoolApplication{
                             game.hp.value = (game.hp.value +20). coerceAtMost(100)
                         }
 
-                        if(used != null && used.item.type == ItemType.POWERT){
-                            game.hp.value = (game.attack.value +20). coerceAtMost(100)
+                        if(used != null && used.item.type == ItemType.WEAPON){
+                            game.attack.value += used.item.power
                         }
                     }
                 }
@@ -274,6 +274,22 @@ fun main() = KoolApplication{
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
